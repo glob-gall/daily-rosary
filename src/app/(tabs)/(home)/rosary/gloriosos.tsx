@@ -1,10 +1,7 @@
+import { gloriosos } from '@/constants/misteries'
+import Rosary from '@/screens/rosary'
 import React from 'react'
-import { Text, View } from 'react-native'
 
-export default function gloriosos() {
-  return (
-    <View>
-      <Text>gloriosos</Text>
-    </View>
-  )
+export default function GloriososScreen() {
+  return <Rosary misteries={gloriosos} />
 }

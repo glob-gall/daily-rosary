@@ -51,7 +51,7 @@ export default function RosaryCard({misteryName,href}:RosaryCardProps) {
           />
         </View>
         <Image
-        className='ml-auto h-full w-44' 
+          className='ml-auto h-full w-44' 
           source={rosaryCard[misteryName].img}
         />
       </View>

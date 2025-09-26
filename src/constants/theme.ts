@@ -127,7 +127,7 @@ export const lightTheme = vars<ThemeData>({
   "--radius": "4px",
   "--background": twColors.slate[200],
   "--foreground": twColors.slate[800],
-  "--card": twColors.slate[100],
+  "--card": twColors.white,
   "--card-foreground": twColors.slate[700],
   "--popover": twColors.slate[100],
   "--popover-foreground": twColors.slate[800],

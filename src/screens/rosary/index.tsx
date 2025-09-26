@@ -1,17 +1,19 @@
 import { rosaryFinalPart } from '@/constants/rosary'
-import { Text, View } from 'react-native'
+import { ScrollView, View } from 'react-native'
 
 import { Misteries } from '@/constants/misteries'
 import { RosaryIntroduction } from './components/rosary-introduction'
 import { RosaryMeditations } from './components/rosary-meditations'
 import { RosaryMisteries } from './components/rosary-misteries'
-
+import { RosaryPray } from './components/rosary-pray'
 type RosaryProps = {
   misteries: Misteries
 }
 export default function Rosary({misteries}:RosaryProps) {
   return (
-    <View>
+    <ScrollView className='bg-background'>
+      <View className='m-4 p-4 bg-card rounded-xl'>
+
       <RosaryIntroduction/>      
 
       <RosaryMisteries
@@ -39,16 +41,16 @@ export default function Rosary({misteries}:RosaryProps) {
         ]}
       />
 
-      <View>
-        <Text>{rosaryFinalPart[1].title}</Text>
-        <Text>{rosaryFinalPart[1].pray}</Text>
-      </View>
-    
-      <View>
-        <Text>{rosaryFinalPart[2].title}</Text>
-        <Text>{rosaryFinalPart[2].pray}</Text>
-      </View>
+      <RosaryPray
+        title={rosaryFinalPart[1].title}
+        pray={rosaryFinalPart[1].pray}
+      />
+      <RosaryPray
+        title={rosaryFinalPart[2].title}
+        pray={rosaryFinalPart[2].pray}
+      />
 
+      </View>
 
       <RosaryMeditations
         refs={[
@@ -59,7 +61,6 @@ export default function Rosary({misteries}:RosaryProps) {
           misteries[5].ref,
         ]}
       />
-      
-    </View>
+    </ScrollView>
   )
 }

@@ -2,16 +2,16 @@ import { agradecimentoDoTerco, aveMaria, credo, gloriaAoPai, oferecimentoTerco, 
 
 
 const introducaoAveMaria1 = `
-  O anjo do Senhor anunciou a Maria\n
-  e ela concebeu do Espírito Santo.\n
+O anjo do Senhor anunciou a Maria
+e ela concebeu do Espírito Santo.
 `
 const introducaoAveMaria2 = `
-  Eis aqui a escrava do Senhor.\n
-  Faça-se em mim segundo a vossa palavra.\n
+Eis aqui a escrava do Senhor.
+Faça-se em mim segundo a vossa palavra.
 `
 const introducaoAveMaria3 = `
-  E o verbo se fez carne\n
-  e habitou entre nós.\n
+E o verbo se fez carne
+e habitou entre nós.
 `
 
 export const misteryIntroduction = {

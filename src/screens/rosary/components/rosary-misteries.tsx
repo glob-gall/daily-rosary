@@ -1,7 +1,8 @@
 import { Mistery } from '@/constants/misteries'
 import { denario, misteryIntroduction } from '@/constants/rosary'
 import { Fragment } from 'react'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
+import { RosaryPray } from './rosary-pray'
 
 type MisteryWithoutRef = Omit<Mistery,'ref'>
 
@@ -14,32 +15,30 @@ export function RosaryMisteries({misteries}:MisteriesProps) {
     <Fragment>
       {misteries.map( mistery => (
         <View key={mistery.title}>
-          <View>
-            <Text>{misteryIntroduction[1].title}</Text>
-            <Text>{misteryIntroduction[1].pray}</Text>
-          </View>
-          <View>
-            <Text>{misteryIntroduction[2].title}</Text>
-            <Text>{misteryIntroduction[2].pray}</Text>
-          </View>
-          
-          <View>
-            <Text>
-              {mistery.title}
-            </Text>
-            <Text>
-              {mistery.text}
-            </Text>
-          </View>
+          <RosaryPray
+            title={misteryIntroduction[1].title}
+            pray={misteryIntroduction[1].pray}
+          />
+          <RosaryPray
+            title={misteryIntroduction[2].title}
+            pray={misteryIntroduction[2].pray}
+          />
 
+          <RosaryPray
+            title={mistery.title}
+            pray={mistery.text}
+          />
+
+          <RosaryPray
+            title={denario[1].title}
+            pray={denario[1].pray}
+          />
           <View>
-            <Text>{denario[1].title}</Text>
-            <Text>{denario[1].pray}</Text>
-          </View>
-          <View>
-            <Text>{denario[2].title}</Text>
-            <Text>{denario[2].pray}</Text>
-            <Text>{denario[2].times}</Text>
+            <RosaryPray
+              title={denario[2].title}
+              pray={denario[2].pray}
+              times={denario[2].times}
+            />
           </View>
 
         </View>

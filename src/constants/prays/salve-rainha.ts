@@ -1,16 +1,16 @@
 export const salveRainha = `
-  Salve Rainha, Mãe de Misericórdia,\n
-  Vida, doçura, esperança nossa, salve!\n
-  A vós bradamos, os degredados filhos de Eva;\n
-  A vós suspiramos gemendo e chorando\n
-  Neste vale de lágrimas.\n
-  Eia, pois, advogada nossa\n
-  Esses vossos olhos misericordiosos a nós volvei,\n
-  E depois deste desterro nos mostrai a Jesus,\n
-  Bendito fruto do vosso ventre,\n
-  Ó Clemente, ó Piedosa, ó Doce,\n
-  Sempre Virgem Maria.\n\n
+Salve Rainha, Mãe de Misericórdia,
+Vida, doçura, esperança nossa, salve!
+A vós bradamos, os degredados filhos de Eva;
+A vós suspiramos gemendo e chorando
+Neste vale de lágrimas.
+Eia, pois, advogada nossa
+Esses vossos olhos misericordiosos a nós volvei,
+E depois deste desterro nos mostrai a Jesus,
+Bendito fruto do vosso ventre,
+Ó Clemente, ó Piedosa, ó Doce,
+Sempre Virgem Maria.
 
-  Rogai por nós, Santa Mãe de Deus,\n
-  Para que sejamos dignos das promessas de Cristo. Amém.\n
+Rogai por nós, Santa Mãe de Deus,
+Para que sejamos dignos das promessas de Cristo. Amém.
 `

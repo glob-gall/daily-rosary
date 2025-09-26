@@ -1,23 +1,23 @@
 export const credo = `
-  Creio em Deus,\n
-  Pai todo-poderoso,\n
-  Criador do Céu e da Terra,\n
-  e em Jesus Cristo,\n
-  Seu único Filho, Nosso Senhor,\n
-  que foi concebido pelo poder do Espírito Santo;\n
-  nasceu da Virgem Maria;\n
-  padeceu sob Pôncio Pilatos,\n
-  foi crucificado, morto e sepultado;\n
-  desceu à mansão dos mortos;\n
-  ressuscitou ao terceiro dia;\n
-  subiu aos Céus;\n
-  está sentado à direita de Deus Pai todo-poderoso\n,
-  de onde há-de vir julgar os vivos e os mortos.\n\n
+Creio em Deus,
+Pai todo-poderoso,
+Criador do Céu e da Terra,
+e em Jesus Cristo,
+Seu único Filho, Nosso Senhor,
+que foi concebido pelo poder do Espírito Santo;
+nasceu da Virgem Maria;
+padeceu sob Pôncio Pilatos,
+foi crucificado, morto e sepultado;
+desceu à mansão dos mortos;
+ressuscitou ao terceiro dia;
+subiu aos Céus;
+está sentado à direita de Deus Pai todo-poderoso,
+de onde há-de vir julgar os vivos e os mortos.
 
-  Creio no Espírito Santo;\n
-  na santa Igreja Católica;\n
-  na comunhão dos santos;\n
-  na remissão dos pecados;\n
-  na ressurreição da carne;\n
-  na vida eterna. Amem!\n
+Creio no Espírito Santo;
+na santa Igreja Católica;
+na comunhão dos santos;
+na remissão dos pecados;
+na ressurreição da carne;
+na vida eterna. Amem!
 `
