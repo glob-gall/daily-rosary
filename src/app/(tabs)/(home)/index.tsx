@@ -8,7 +8,6 @@ import { Image, ScrollView, Text, View } from "react-native";
 import twColors from 'tailwindcss/colors';
 
 export default function HomeScreen() {
-  // const {colors} = useTheme()
   
   return (
     <ScrollView className="h-full flex bg-background">
@@ -38,6 +37,7 @@ export default function HomeScreen() {
             </View>
           </View>
         </View>
+        <RosaryCard misteryName="full" href="/(tabs)/(home)/rosary/luminosos" />
         <RosaryCard misteryName="dolorosos" href="/(tabs)/(home)/rosary/dolorosos" />
         <RosaryCard misteryName="gloriosos" href="/(tabs)/(home)/rosary/gloriosos" />
         <RosaryCard misteryName="gozosos" href="/(tabs)/(home)/rosary/gozosos" />
