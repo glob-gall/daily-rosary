@@ -38,9 +38,9 @@ export default function StrikeCalendarHeader({month,addMonth,dayNamesShort}: Str
 
       </View>
 
-      <View className='items-center flex-row gap-4 justify-end'>
+      <View className='items-center flex-row gap-4'>
         
-        <View className='bg-background flex-row p-2 rounded-xl gap-2 items-center'>
+        <View className='bg-background flex-row p-2 rounded-xl gap-2 items-center flex-1'>
           <Zap fill={twColors.yellow[400]} color={twColors.yellow[400]} size={32}/>
           <View className=''>
             <Text className='text-4xl font-bold text-primary'>7</Text>
@@ -48,7 +48,7 @@ export default function StrikeCalendarHeader({month,addMonth,dayNamesShort}: Str
           </View>
         </View>
 
-        <View className='bg-background flex-row p-2 rounded-xl gap-2 items-center'>
+        <View className='bg-background flex-row p-2 rounded-xl gap-2 items-center flex-1'>
           <Zap fill={twColors.yellow[400]} color={twColors.yellow[400]} size={32}/>
           <View className=''>
             <Text className='text-4xl font-bold text-primary'>2</Text>
