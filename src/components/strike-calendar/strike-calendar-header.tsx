@@ -1,8 +1,8 @@
 import { ArrowLeft, ArrowRight, Zap } from 'lucide-react-native';
-import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import twColors from 'tailwindcss/colors';
 import XDate from 'xdate';
+;
 
 export type StrikeCalendarHeaderProps = {
   addMonth: (qnt:number) => void;

@@ -1,6 +1,6 @@
 import { StrikeCalendar } from '@/components/strike-calendar'
 import { Zap } from 'lucide-react-native'
-import React from 'react'
+
 import { Text, View } from 'react-native'
 
 import twColors from 'tailwindcss/colors'

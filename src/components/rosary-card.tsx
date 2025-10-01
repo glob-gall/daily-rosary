@@ -1,6 +1,6 @@
 import { Href, Link } from 'expo-router'
 import { Play } from 'lucide-react-native'
-import React from 'react'
+
 import { Image, Text, View } from 'react-native'
 import twColors from 'tailwindcss/colors'
 

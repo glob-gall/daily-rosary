@@ -1,4 +1,4 @@
-import React from 'react';
+;
 import { Calendar, LocaleConfig } from 'react-native-calendars';
 import twColors, { transparent } from 'tailwindcss/colors';
 import StrikeCalendarHeader, { StrikeCalendarHeaderProps } from './strike-calendar-header';
