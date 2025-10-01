@@ -1,7 +1,10 @@
-;
+import { sequenceStore } from '@/store/sequence-store';
+import { storedSequenceToCalendar } from '@/utils/stored-sequence-to-calendar';
+import { useMemo } from 'react';
 import { Calendar, LocaleConfig } from 'react-native-calendars';
 import twColors, { transparent } from 'tailwindcss/colors';
 import StrikeCalendarHeader, { StrikeCalendarHeaderProps } from './strike-calendar-header';
+;
 
 const localePtBr = {
   monthNames: [
@@ -27,7 +30,10 @@ LocaleConfig.locales['pt-br'] = localePtBr;
 LocaleConfig.defaultLocale = 'pt-br';
 
 export function StrikeCalendar() {
-
+  const {days} = sequenceStore()
+  const markedDates = useMemo(() => storedSequenceToCalendar(days),[days])
+  console.log({markedDates});
+  
   return (
     <Calendar
       // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
@@ -39,17 +45,18 @@ export function StrikeCalendar() {
         )
       }
 
+
       hideDayNames={false}
       enableSwipeMonths={true}
-      markingType='period'
-      markedDates={{
-        '2025-09-04': {startingDay: true, endingDay:true, color: twColors.yellow[200], textColor:twColors.yellow[800]},
-        '2025-09-20': {startingDay:true, endingDay:true, color: twColors.yellow[200], textColor:twColors.yellow[800]},
-        '2025-09-22': {startingDay: true, color: twColors.yellow[200], textColor:twColors.yellow[800]},
-        '2025-09-23': {selected: true, color: twColors.yellow[200], textColor:twColors.yellow[800]},
-        '2025-09-24': {selected: true, endingDay: true, color: twColors.yellow[200], textColor:twColors.yellow[800]},
+
+      markingType={'period'}
+      markedDates={markedDates}
+      theme={{
+        calendarBackground: transparent,
+        selectedDayBackgroundColor: twColors.yellow[200],
+        selectedDayTextColor: twColors.yellow[800],
+        selectedDotColor: '#000'
       }}
-      theme={{calendarBackground: transparent}}
     />
   )
 }

@@ -8,32 +8,32 @@ export function RosaryIntroduction() {
       <RosaryPray 
         title={rosaryInitialPart[1].title}
         pray={rosaryInitialPart[1].pray}
-      >
-      </RosaryPray>
+      />
+      
       
       <RosaryPray 
         title={rosaryInitialPart[2].title}
         pray={rosaryInitialPart[2].pray}
-      >
-      </RosaryPray>
+      />
+      
 
       <RosaryPray 
         title={rosaryInitialPart[3].title}
         pray={rosaryInitialPart[3].pray}
-      >
-      </RosaryPray>
+      />
+      
 
       <RosaryPray 
         title={rosaryInitialPart[4].title}
         pray={rosaryInitialPart[4].pray}
-      >
-      </RosaryPray>
+      />
+      
 
       <RosaryPray 
         title={rosaryInitialPart[5].title}
         pray={rosaryInitialPart[5].pray}
-      >
-      </RosaryPray>
+        times={rosaryInitialPart[5].times}
+      />
       
     </Fragment>
   )

@@ -10,7 +10,7 @@ export default function Strike() {
     <View className='p-4 gap-4 bg-background h-full'>
       <View className='bg-card p-4 rounded-xl flex-row justify-between'>
         <View>
-          <Text className='text-4xl font-bold text-primary'>21</Text>
+          <Text className='text-6xl font-bold text-primary'>21</Text>
           <Text className='font-bold text-primary'>DIAS CONSECUTIVOS</Text>
         </View>
 

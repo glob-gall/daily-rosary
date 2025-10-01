@@ -3,6 +3,7 @@ import { gloriosos } from './gloriosos'
 import { gozosos } from './gozosos'
 import { luminosos } from './luminosos'
 
+export type RosaryType = 'dolorosos'| 'gloriosos' | 'gozosos' | 'luminosos' | 'full'
 export type Mistery = {
   title: string
   text: string

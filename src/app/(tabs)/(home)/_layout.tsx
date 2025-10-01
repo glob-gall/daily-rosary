@@ -37,6 +37,12 @@ export default function Layout() {
             title:'Mistérios Luminosos'
           }}
         />
+        <Stack.Screen 
+          name='rosary/full'
+          options={{
+            title:'Rosário Completo'
+          }}
+        />
       </Stack>
 
     </View>

@@ -37,7 +37,7 @@ export default function HomeScreen() {
             </View>
           </View>
         </View>
-        <RosaryCard misteryName="full" href="/(tabs)/(home)/rosary/luminosos" />
+        <RosaryCard misteryName="full" href="/(tabs)/(home)/rosary/full" />
         <RosaryCard misteryName="dolorosos" href="/(tabs)/(home)/rosary/dolorosos" />
         <RosaryCard misteryName="gloriosos" href="/(tabs)/(home)/rosary/gloriosos" />
         <RosaryCard misteryName="gozosos" href="/(tabs)/(home)/rosary/gozosos" />
