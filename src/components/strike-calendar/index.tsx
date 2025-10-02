@@ -32,7 +32,6 @@ LocaleConfig.defaultLocale = 'pt-br';
 export function StrikeCalendar() {
   const {days} = sequenceStore()
   const markedDates = useMemo(() => storedSequenceToCalendar(days),[days])
-  console.log({markedDates});
   
   return (
     <Calendar

@@ -1,5 +1,6 @@
 import { SequenceDay } from "@/store/sequence-store";
 import twColors from 'tailwindcss/colors';
+import XDate from "xdate";
 import { sequenceToString } from "./stored-sequence-to-string";
 type CalendarDay = {
   startingDay?: boolean,
@@ -26,15 +27,20 @@ export function storedSequenceToCalendar(days:SequenceDay[]): CalendarMarkedDate
   for (const day of days) {
     existentDays.add(sequenceToString(day))
   }
+  console.log(existentDays);
+  
 
   for (const day of days) {
     const curDay = sequenceToString(day)
     
-    const prevDate = new Date(day.year, day.month, day.day - 1);
-    const nextDate = new Date(day.year, day.month, day.day + 1);
+    const prevDate = new XDate(day.year, day.month-1, day.day - 1);
+    const nextDate = new XDate(day.year, day.month-1, day.day + 1);
+    console.log(` ${prevDate}-[${curDay}]-${nextDate}`);
     
-    const prevDateStr = `${prevDate.getFullYear()}-${prevDate.getMonth() + 1}-${prevDate.getDate()}`;
-    const nextDateStr = `${nextDate.getFullYear()}-${nextDate.getMonth() + 1}-${nextDate.getDate()}`;
+    const prevDateStr = prevDate.toString('yyyy-MM-dd');
+    const nextDateStr = nextDate.toString('yyyy-MM-dd');
+    console.log(` ${prevDateStr}-[${curDay}]-${nextDateStr}`);
+
 
     const startingDay = !existentDays.has(prevDateStr);
     const endingDay = !existentDays.has(nextDateStr);
