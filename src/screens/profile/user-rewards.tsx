@@ -8,6 +8,8 @@ import RewardItem from './reward-item';
 
 
 export default function UserRewards() {
+  
+
   return (
     <View className='bg-card p-4 rounded-xl gap-4 flex-1'>
       <View className='flex flex-row gap-2'>
@@ -16,7 +18,7 @@ export default function UserRewards() {
       </View>
       <ScrollView>
       
-        <View className='flex flex-row flex-wrap gap-2 items-center justify-center'>
+        <View className='flex gap-2'>
 
           <RewardItem completed={true} days={10}/>
           <RewardItem completed={false} days={30}/>

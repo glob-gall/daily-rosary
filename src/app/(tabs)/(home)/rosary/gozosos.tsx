@@ -3,5 +3,5 @@ import Rosary from '@/screens/rosary'
 
 
 export default function GozososScreen() {
-  return <Rosary misteries={gozosos} />
+  return <Rosary misteries={gozosos} type='gozosos'/>
 }

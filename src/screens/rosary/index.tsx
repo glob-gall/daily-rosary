@@ -1,54 +1,59 @@
 import { rosaryFinalPart } from '@/constants/rosary'
 import { ScrollView, View } from 'react-native'
 
-import { Misteries } from '@/constants/misteries'
+import CompleteRosaryButton from '@/components/complete-rosary-button'
+import { Misteries, RosaryType } from '@/constants/misteries'
 import { RosaryIntroduction } from './components/rosary-introduction'
 import { RosaryMeditations } from './components/rosary-meditations'
 import { RosaryMisteries } from './components/rosary-misteries'
 import { RosaryPray } from './components/rosary-pray'
+
 type RosaryProps = {
   misteries: Misteries
+  type: RosaryType
 }
-export default function Rosary({misteries}:RosaryProps) {
+export default function Rosary({misteries, type}:RosaryProps) {
   return (
     <ScrollView className='bg-background'>
       <View className='m-4 p-4 bg-card rounded-xl'>
 
-      <RosaryIntroduction/>      
+        <RosaryIntroduction/>      
 
-      <RosaryMisteries
-        misteries={[
-          {
-            title:misteries[1].title,
-            text:misteries[1].text,
-          },
-          {
-            title:misteries[2].title,
-            text:misteries[2].text,
-          },
-          {
-            title:misteries[3].title,
-            text:misteries[3].text,
-          },
-          {
-            title:misteries[4].title,
-            text:misteries[4].text,
-          },
-          {
-            title:misteries[5].title,
-            text:misteries[5].text,
-          },
-        ]}
-      />
+        <RosaryMisteries
+          misteries={[
+            {
+              title:misteries[1].title,
+              text:misteries[1].text,
+            },
+            {
+              title:misteries[2].title,
+              text:misteries[2].text,
+            },
+            {
+              title:misteries[3].title,
+              text:misteries[3].text,
+            },
+            {
+              title:misteries[4].title,
+              text:misteries[4].text,
+            },
+            {
+              title:misteries[5].title,
+              text:misteries[5].text,
+            },
+          ]}
+        />
 
-      <RosaryPray
-        title={rosaryFinalPart[1].title}
-        pray={rosaryFinalPart[1].pray}
-      />
-      <RosaryPray
-        title={rosaryFinalPart[2].title}
-        pray={rosaryFinalPart[2].pray}
-      />
+        <RosaryPray
+          title={rosaryFinalPart[1].title}
+          pray={rosaryFinalPart[1].pray}
+        />
+        <RosaryPray
+          title={rosaryFinalPart[2].title}
+          pray={rosaryFinalPart[2].pray}
+        />
+
+        <CompleteRosaryButton type={type}/>
 
       </View>
 

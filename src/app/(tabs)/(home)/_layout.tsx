@@ -1,46 +1,81 @@
+import { useTheme } from '@/hooks/theme'
 import { Stack } from 'expo-router'
 
 import { View } from 'react-native'
 
 export default function Layout() {
+  const { themeVars } = useTheme()
+
   return (
     <View className='h-full'>
 
       <Stack>
         <Stack.Screen 
           name='index'
+
           options={{
-            title:'Dashboard'
+            title:'Dashboard',
+            headerStyle:{
+              backgroundColor: themeVars.card,
+              
+            },
+            headerTintColor: themeVars.primary,
           }}
+          
         />
         <Stack.Screen 
           name='rosary/dolorosos'
           options={{
-            title:'Mistérios Dolorosos'
+            title:'Mistérios Dolorosos',
+            headerStyle:{
+              backgroundColor: themeVars.card,
+            },
+            headerTintColor: themeVars.primary,
+            headerBackTitle: ''
           }}
         />
         <Stack.Screen 
           name='rosary/gloriosos'
           options={{
-            title:'Mistérios Gloriosos'
+            title:'Mistérios Gloriosos',
+            headerStyle:{
+              backgroundColor: themeVars.card,
+            },
+            headerTintColor: themeVars.primary,
+            headerBackTitle: ''
           }}
         />
         <Stack.Screen 
           name='rosary/gozosos'
           options={{
-            title:'Mistérios Gozosos'
+            title:'Mistérios Gozosos',
+            headerStyle:{
+              backgroundColor: themeVars.card,
+            },
+            headerTintColor: themeVars.primary,
+            headerBackTitle: ''
           }}
         />
         <Stack.Screen 
           name='rosary/luminosos'
           options={{
-            title:'Mistérios Luminosos'
+            title:'Mistérios Luminosos',
+            headerStyle:{
+              backgroundColor: themeVars.card,
+            },
+            headerTintColor: themeVars.primary,
+            headerBackTitle: ''
           }}
         />
         <Stack.Screen 
           name='rosary/full'
           options={{
-            title:'Rosário Completo'
+            title:'Rosário Completo',
+            headerStyle:{
+              backgroundColor: themeVars.card,
+            },
+            headerTintColor: themeVars.primary,
+            headerBackTitle: ''
           }}
         />
       </Stack>

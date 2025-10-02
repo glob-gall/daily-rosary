@@ -9,24 +9,24 @@ import twColors from 'tailwindcss/colors';
 
 export type ThemeVariables = {
   radius: string,
-    background: string,
-    foreground: string,
-    card: string,
-    cardForeground: string,
-    popover: string,
-    popoverForeground: string,
-    primary: string,
-    primaryForeground: string,
-    secondary: string,
-    secondaryForeground: string,
-    muted: string,
-    mutedForeground: string,
-    accent: string,
-    accentForeground: string,
-    destructive: string,
-    border: string,
-    input: string,
-    ring: string,
+  background: string,
+  foreground: string,
+  card: string,
+  cardForeground: string,
+  popover: string,
+  popoverForeground: string,
+  primary: string,
+  primaryForeground: string,
+  secondary: string,
+  secondaryForeground: string,
+  muted: string,
+  mutedForeground: string,
+  accent: string,
+  accentForeground: string,
+  destructive: string,
+  border: string,
+  input: string,
+  ring: string,
 }
 
 const lightThemeVariables: ThemeVariables = {
@@ -123,7 +123,10 @@ export type ThemeData = {
   '--input': string,
   '--ring': string,
 }
-export const lightTheme = vars<ThemeData>({
+
+
+
+const twLightTheme = vars<ThemeData>({
   "--radius": "4px",
   "--background": twColors.slate[200],
   "--foreground": twColors.slate[800],
@@ -144,7 +147,8 @@ export const lightTheme = vars<ThemeData>({
   "--input": twColors.slate[700],
   "--ring": twColors.blue[400],
 }) 
-export const darkTheme = vars<ThemeData>({
+
+const twDarkTheme = vars<ThemeData>({
   "--radius": "4px",
   "--background": twColors.slate[950],
   "--foreground": twColors.slate[200],
@@ -165,3 +169,8 @@ export const darkTheme = vars<ThemeData>({
   "--input": twColors.slate[600],
   "--ring": twColors.slate[200],
 })
+
+export const twThemes = {
+  light: twLightTheme,
+  dark: twDarkTheme
+}

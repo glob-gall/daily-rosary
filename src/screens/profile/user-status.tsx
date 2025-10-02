@@ -1,3 +1,4 @@
+import { useTheme } from '@/hooks/theme'
 import { Cross, Heart, Zap } from 'lucide-react-native'
 
 import { Text, View } from 'react-native'
@@ -5,6 +6,8 @@ import twColors from 'tailwindcss/colors'
 
 
 export function UserStatus() {
+  const {themeVars} = useTheme()
+
   return (
     <View className='bg-card p-4 rounded-xl gap-4'>
       
@@ -14,7 +17,7 @@ export function UserStatus() {
         </View>
 
         <View className='flex-row items-center gap-2'>
-            <Cross fill={twColors.black} stroke={twColors.black}/>
+            <Cross fill={themeVars.primary} stroke={themeVars.primary}/>
            <Text className='font-bold text-lg text-primary'>16 TERÇOS</Text>
         </View>
 

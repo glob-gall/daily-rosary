@@ -25,7 +25,7 @@ export default function CompleteRosaryButton({type}: CompleteRosaryButtonProps) 
     <TouchableOpacity onPress={confirmComplete}>
       <View className='bg-primary rounded-xl items-center justify-center flex-row p-4 gap-4'>
         {/* <Check stroke={twColors.slate[100]} strokeWidth={3}/> */}
-        <Text className='text-primary-foreground text-xl font-bold'>COMPLETO</Text>
+        <Text className='text-primary-foreground text-xl font-bold'>AMÉM</Text>
       </View>
     </TouchableOpacity>
   )

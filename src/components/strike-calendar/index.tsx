@@ -1,3 +1,4 @@
+import { useTheme } from '@/hooks/theme';
 import { sequenceStore } from '@/store/sequence-store';
 import { storedSequenceToCalendar } from '@/utils/stored-sequence-to-calendar';
 import { useMemo } from 'react';
@@ -30,6 +31,7 @@ LocaleConfig.locales['pt-br'] = localePtBr;
 LocaleConfig.defaultLocale = 'pt-br';
 
 export function StrikeCalendar() {
+  const {themeVars} = useTheme()
   const {days} = sequenceStore()
   const markedDates = useMemo(() => storedSequenceToCalendar(days),[days])
   
@@ -54,7 +56,8 @@ export function StrikeCalendar() {
         calendarBackground: transparent,
         selectedDayBackgroundColor: twColors.yellow[200],
         selectedDayTextColor: twColors.yellow[800],
-        selectedDotColor: '#000'
+        selectedDotColor: '#000',
+        dayTextColor: themeVars.primary
       }}
     />
   )

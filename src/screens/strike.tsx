@@ -6,6 +6,8 @@ import { Text, View } from 'react-native'
 import twColors from 'tailwindcss/colors'
 
 export default function Strike() {
+  
+
   return (
     <View className='p-4 gap-4 bg-background h-full'>
       <View className='bg-card p-4 rounded-xl flex-row justify-between'>

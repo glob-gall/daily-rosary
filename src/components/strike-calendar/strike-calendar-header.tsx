@@ -1,3 +1,4 @@
+import { useTheme } from '@/hooks/theme';
 import { ArrowLeft, ArrowRight, Zap } from 'lucide-react-native';
 import { Text, TouchableOpacity, View } from 'react-native';
 import twColors from 'tailwindcss/colors';
@@ -12,6 +13,7 @@ export type StrikeCalendarHeaderProps = {
 };
 
 export default function StrikeCalendarHeader({month,addMonth,dayNamesShort}: StrikeCalendarHeaderProps) {
+  const {themeVars} = useTheme()
   const title =  new XDate(month).toString('MMMM yyyy')  
 
   function monthBack() {
@@ -27,13 +29,13 @@ export default function StrikeCalendarHeader({month,addMonth,dayNamesShort}: Str
       <View className='flex-row items-center justify-between'>
 
         <TouchableOpacity onPress={monthBack}>
-          <ArrowLeft/>
+          <ArrowLeft stroke={themeVars.primary}/>
         </TouchableOpacity>
         
         <Text className='text-2xl font-bold text-primary'>{title}</Text>
         
         <TouchableOpacity onPress={monthFoward}>
-          <ArrowRight/>
+          <ArrowRight stroke={themeVars.primary}/>
         </TouchableOpacity>
 
       </View>

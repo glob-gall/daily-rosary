@@ -11,10 +11,10 @@ type MeditationsProps = {
 
 export function RosaryMeditations({refs}:MeditationsProps) {
   return (
-    <View className='m-4 rounded-xl gap-4'>
+    <View className=' bg-card m-4 rounded-xl p-4 gap-4'>
       <Text className='text-2xl font-bold text-primary'>Meditações</Text>
       {refs.map( ref => (
-        <View key={ref.font} className='bg-card p-4 rounded-xl'>
+        <View key={ref.font} className='rounded-xl  p-4'>
           <Text className='text-lg text-primary'>
             {ref.text}
           </Text>
