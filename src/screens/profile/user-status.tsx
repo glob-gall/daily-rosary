@@ -29,8 +29,8 @@ export function UserStatus() {
 
    
 
-        {/* <Button title='reset' onPress={reset}/>
-        <Button title='test' onPress={test}/> */}
+        {/* <Button title='reset' onPress={reset}/> */}
+        {/* <Button title='test' onPress={test}/> */}
       
       </View>
   )

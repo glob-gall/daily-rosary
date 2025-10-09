@@ -1,5 +1,7 @@
 import { RosaryType } from "@/constants/misteries"
-import { createContext, ReactNode, useCallback, useContext, useState } from "react"
+import { AsyncStorage } from "@/store/async-store"
+import { createContext, ReactNode, useCallback, useContext, useEffect, useMemo, useState } from "react"
+
 
 export type SequenceDay = {
   day: number
@@ -48,11 +50,27 @@ type SequenceProviderProps = {
   children: ReactNode
 }
 export function SequenceProvider({children}:SequenceProviderProps) {
+  const sequenceStore = useMemo(() => new AsyncStorage<SequenceState>() ,[])
+
   const [days, setDays] = useState<SequenceDay[]>([])
   const [total, setTotal] = useState(0)
   const [totalFull, setTotalFull] = useState(0)
 
-  const addDay = useCallback((day:SequenceDay) => {
+  useEffect(() => {
+    const loadSequence = async () => {
+      const data = await sequenceStore.load()
+      if(!data) return
+
+      setDays(data.days)
+      setTotal(data.total)
+      setTotalFull(data.totalFull)
+    }
+
+    loadSequence()
+  },[sequenceStore])
+
+
+  const addDay = useCallback( async (day:SequenceDay) => {
     const exists = days.some(
       (d) =>
         d.day === day.day &&
@@ -61,12 +79,30 @@ export function SequenceProvider({children}:SequenceProviderProps) {
     );
     if (exists) return;
 
-    if(day.type ===   'full') setTotalFull(t => t+1)
-    else setTotal(t => t+1)
+    let newTotal= total
+    let newTotalFull= totalFull
+    const newDays = [...days, day]
 
-    setDays(state => [...state, day])
-  },[days])
-  const removeDay = useCallback((day:SequenceDay) => {
+    if(day.type ===   'full') {
+      newTotalFull+=1
+      setTotalFull(newTotalFull)
+    }
+    else {
+      newTotal+=1
+      setTotal(newTotal)
+    }
+    setDays(newDays)
+    
+
+    await sequenceStore.store({
+      days: newDays,
+      total: newTotal,
+      totalFull: newTotalFull
+    })
+  },[days, sequenceStore, total, totalFull])
+
+
+  const removeDay = useCallback(async (day:SequenceDay) => {
     const index = days.findIndex(
       (d) =>
         d.day === day.day &&
@@ -75,18 +111,39 @@ export function SequenceProvider({children}:SequenceProviderProps) {
     );
     if (index === -1) return;
 
-    if(day.type ===   'full') setTotalFull(t => t-1)
-    else setTotal(t => t-1)
+    let newTotal= total
+    let newTotalFull= totalFull
+    const newDays = [...days, day]
+
+    if(day.type ===   'full') {
+      newTotalFull-=1
+      setTotalFull(newTotalFull)
+    }
+    else {
+      newTotal-=1
+      setTotal(newTotal)
+    }
+    setDays(newDays)
     
 
-    setDays(state => state.splice(index,1))
-  },[days])
+    await sequenceStore.store({
+      days: newDays,
+      total: newTotal,
+      totalFull: newTotalFull
+    })
+  },[days, sequenceStore, total, totalFull])
 
   const reset = useCallback(()=>{
     setDays([])
     setTotal(0)
     setTotalFull(0)
-  }, [])
+
+    sequenceStore.store({
+      days:[],
+      total:0,
+      totalFull:0
+    })
+  }, [sequenceStore])
 
   const test = useCallback(()=>{
     setDays([])
