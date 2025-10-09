@@ -16,7 +16,7 @@ export default function UserRewards() {
         <Award stroke={twColors.yellow[500]}/>
         <Text className='text-primary font-bold text-lg'>CONQUISTAS</Text>
       </View>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
       
         <View className='flex gap-2'>
 

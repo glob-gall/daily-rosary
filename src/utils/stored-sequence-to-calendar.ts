@@ -19,28 +19,26 @@ type CalendarMarkedDates = {
 // '2025-09-22': {startingDay: true, selected: true, color: twColors.yellow[200], textColor: twColors.yellow[800] },
 // '2025-09-23': {selected: true, color: twColors.yellow[200], textColor: twColors.yellow[800] },
 // '2025-09-24': {selected: true, endingDay: true, color: twColors.yellow[200], textColor: twColors.yellow[800]},
+type StoredSequenceToCalendarResponse = {
+  calendarDays:CalendarMarkedDates
+}
 
-export function storedSequenceToCalendar(days:SequenceDay[]): CalendarMarkedDates {
+export function storedSequenceToCalendar(days:SequenceDay[]): StoredSequenceToCalendarResponse {
   const calendarDays: CalendarMarkedDates = {}
   const existentDays = new Set()
 
   for (const day of days) {
     existentDays.add(sequenceToString(day))
   }
-  console.log(existentDays);
-  
 
   for (const day of days) {
     const curDay = sequenceToString(day)
     
     const prevDate = new XDate(day.year, day.month-1, day.day - 1);
     const nextDate = new XDate(day.year, day.month-1, day.day + 1);
-    console.log(` ${prevDate}-[${curDay}]-${nextDate}`);
     
     const prevDateStr = prevDate.toString('yyyy-MM-dd');
     const nextDateStr = nextDate.toString('yyyy-MM-dd');
-    console.log(` ${prevDateStr}-[${curDay}]-${nextDateStr}`);
-
 
     const startingDay = !existentDays.has(prevDateStr);
     const endingDay = !existentDays.has(nextDateStr);
@@ -54,5 +52,7 @@ export function storedSequenceToCalendar(days:SequenceDay[]): CalendarMarkedDate
     }
   }
 
-  return calendarDays
+  return {
+    calendarDays
+  }
 }

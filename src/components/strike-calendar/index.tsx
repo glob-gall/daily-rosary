@@ -1,5 +1,5 @@
+import { useSequence } from '@/hooks/sequence';
 import { useTheme } from '@/hooks/theme';
-import { sequenceStore } from '@/store/sequence-store';
 import { storedSequenceToCalendar } from '@/utils/stored-sequence-to-calendar';
 import { useMemo } from 'react';
 import { Calendar, LocaleConfig } from 'react-native-calendars';
@@ -32,8 +32,8 @@ LocaleConfig.defaultLocale = 'pt-br';
 
 export function StrikeCalendar() {
   const {themeVars} = useTheme()
-  const {days} = sequenceStore()
-  const markedDates = useMemo(() => storedSequenceToCalendar(days),[days])
+  const {days} = useSequence()
+  const {calendarDays} = useMemo(() => storedSequenceToCalendar(days),[days])
   
   return (
     <Calendar
@@ -45,19 +45,25 @@ export function StrikeCalendar() {
           <StrikeCalendarHeader month={month} addMonth={addMonth} dayNamesShort={localePtBr.dayNamesShort}/>
         )
       }
+      
 
 
       hideDayNames={false}
       enableSwipeMonths={true}
 
       markingType={'period'}
-      markedDates={markedDates}
+      markedDates={calendarDays}
       theme={{
         calendarBackground: transparent,
         selectedDayBackgroundColor: twColors.yellow[200],
         selectedDayTextColor: twColors.yellow[800],
         selectedDotColor: '#000',
-        dayTextColor: themeVars.primary
+        dayTextColor: themeVars.secondary,
+        todayTextColor: themeVars.primary,
+        todayBackgroundColor: themeVars.background,
+       
+     
+        textDisabledColor: themeVars.muted,
       }}
     />
   )

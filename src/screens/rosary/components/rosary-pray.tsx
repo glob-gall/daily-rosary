@@ -16,7 +16,7 @@ export function RosaryPray({pray,title,times}: RosaryPrayProps) {
         </Text>
       {times && (
         <View className=' ml-auto'>
-          <Text className='font-bold ml-auto'>{times}x</Text> 
+          <Text className='font-bold ml-auto text-secondary'>{times}x</Text> 
         </View>
       )}
       </View>

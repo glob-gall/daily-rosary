@@ -8,16 +8,15 @@ import { Image, ScrollView, Text, View } from "react-native";
 import twColors from 'tailwindcss/colors';
 
 export default function HomeScreen() {
-  
+
   return (
-    <ScrollView className="h-full flex bg-background">
+    <ScrollView className="h-full flex bg-background" showsVerticalScrollIndicator={false}>
       <View  className="flex h-full  items-center justify-center gap-4 p-4 ">
         <View className="bg-card rounded-xl  flex w-full h-48  flex-row p-1">
           <Image
             className='mr-auto h-full w-32' 
             source={require('@/assets/images/holy/virgemmaria.png')}
           />
-
           <View className="m-3">
             <Text className="ml-auto text-primary">
               {getWeekday()}
@@ -36,7 +35,9 @@ export default function HomeScreen() {
               </Link>
             </View>
           </View>
+          
         </View>
+
         <RosaryCard misteryName="full" href="/(tabs)/(home)/rosary/full" />
         <RosaryCard misteryName="dolorosos" href="/(tabs)/(home)/rosary/dolorosos" />
         <RosaryCard misteryName="gloriosos" href="/(tabs)/(home)/rosary/gloriosos" />

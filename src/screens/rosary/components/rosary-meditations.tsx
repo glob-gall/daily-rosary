@@ -18,7 +18,7 @@ export function RosaryMeditations({refs}:MeditationsProps) {
           <Text className='text-lg text-primary'>
             {ref.text}
           </Text>
-          <Text className='ml-auto font-bold text-primary'>
+          <Text className='ml-auto font-bold text-secondary'>
             {ref.font}
           </Text>
         </View>

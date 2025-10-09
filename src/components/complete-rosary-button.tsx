@@ -1,5 +1,5 @@
 import { RosaryType } from '@/constants/misteries'
-import { sequenceStore } from '@/store/sequence-store'
+import { useSequence } from '@/hooks/sequence'
 import { splitDate } from '@/utils/split-date'
 import { useRouter } from 'expo-router'
 import React from 'react'
@@ -10,11 +10,11 @@ type CompleteRosaryButtonProps = {
 }
 export default function CompleteRosaryButton({type}: CompleteRosaryButtonProps) {
   const router = useRouter();
-  const { addDay } = sequenceStore()
+  const {addDay} = useSequence()
 
   function confirmComplete() {
     addDay({
-      type: 'full',
+      type,
       ...splitDate(new Date())
     })
     router.back()

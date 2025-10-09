@@ -1,3 +1,4 @@
+import { useSequence } from '@/hooks/sequence';
 import { useTheme } from '@/hooks/theme';
 import { ArrowLeft, ArrowRight, Zap } from 'lucide-react-native';
 import { Text, TouchableOpacity, View } from 'react-native';
@@ -14,8 +15,11 @@ export type StrikeCalendarHeaderProps = {
 
 export default function StrikeCalendarHeader({month,addMonth,dayNamesShort}: StrikeCalendarHeaderProps) {
   const {themeVars} = useTheme()
-  const title =  new XDate(month).toString('MMMM yyyy')  
-
+  const dateMonth =  new XDate(month)  
+  const title =  dateMonth.toString('MMMM yyyy')  
+  const {getMonthSequence} = useSequence() 
+  const test = getMonthSequence(dateMonth.getMonth()+1)
+  
   function monthBack() {
     addMonth(-1)
   }
@@ -45,7 +49,7 @@ export default function StrikeCalendarHeader({month,addMonth,dayNamesShort}: Str
         <View className='bg-background flex-row p-2 rounded-xl gap-2 items-center flex-1'>
           <Zap fill={twColors.yellow[400]} color={twColors.yellow[400]} size={32}/>
           <View className=''>
-            <Text className='text-4xl font-bold text-primary'>7</Text>
+            <Text className='text-4xl font-bold text-primary'>{test.total}</Text>
             <Text className='font-bold text-primary'>TERÇOS</Text>
           </View>
         </View>
@@ -53,7 +57,7 @@ export default function StrikeCalendarHeader({month,addMonth,dayNamesShort}: Str
         <View className='bg-background flex-row p-2 rounded-xl gap-2 items-center flex-1'>
           <Zap fill={twColors.yellow[400]} color={twColors.yellow[400]} size={32}/>
           <View className=''>
-            <Text className='text-4xl font-bold text-primary'>2</Text>
+            <Text className='text-4xl font-bold text-primary'>{test.totalFull}</Text>
             <Text className='font-bold text-primary'>ROSÁRIOS</Text>
           </View>
         </View>
