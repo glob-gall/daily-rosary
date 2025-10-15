@@ -1,5 +1,6 @@
 import { RosaryType } from "@/constants/misteries"
 import { AsyncStorage } from "@/store/async-store"
+import { getDayBetweenDates } from "@/utils/get-days-between-dates"
 import { createContext, ReactNode, useCallback, useContext, useEffect, useMemo, useState } from "react"
 
 
@@ -26,6 +27,7 @@ type SequenceActions = {
   removeDay: (day: SequenceDay) => void
   reset: () => void
   test: () => void
+  getLastSequence: () => number
   getMonthSequence: (month: number) => GetMonthSequenceResponse
 }
 
@@ -39,8 +41,8 @@ const initialValues:SequenceValues = {
   removeDay: () => {},
   reset: () => {},
   test: () => {},
-  getMonthSequence: (month:number) => ({total:0,totalFull:0})
-
+  getMonthSequence: (month:number) => ({total:0,totalFull:0}),
+  getLastSequence: () => 0
 }
 
 const SequenceContext = createContext<SequenceValues>(initialValues)
@@ -60,7 +62,7 @@ export function SequenceProvider({children}:SequenceProviderProps) {
     const loadSequence = async () => {
       const data = await sequenceStore.load()
       if(!data) return
-
+      
       setDays(data.days)
       setTotal(data.total)
       setTotalFull(data.totalFull)
@@ -168,10 +170,29 @@ export function SequenceProvider({children}:SequenceProviderProps) {
     }
   }, [days])
 
+  const getLastSequence = useCallback(() => {
+    let last = days.length-1
+    if(last === -1) return 0
+    
+    const lastDay = new Date(days[last].year, days[last].month-1, days[last].day)
+    
+    let lastSequence = 0
+    let dayDistance = 0
+    for (let i = last; i >= 0; i--) {
+      const seqDay = new Date(days[i].year, days[i].month-1, days[i].day)
+      
+      if(getDayBetweenDates(lastDay,seqDay) > dayDistance) break
+      dayDistance+=1
+      lastSequence+=1
+    }
+
+    return lastSequence
+  },[days])
+
 
   return (
     <SequenceContext.Provider value={{
-      addDay,removeDay,days,reset,test,total,totalFull,getMonthSequence
+      addDay,removeDay,days,reset,test,total,totalFull,getMonthSequence, getLastSequence
     }}>
       {children}
     </SequenceContext.Provider>

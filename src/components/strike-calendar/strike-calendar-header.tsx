@@ -18,7 +18,8 @@ export default function StrikeCalendarHeader({month,addMonth,dayNamesShort}: Str
   const dateMonth =  new XDate(month)  
   const title =  dateMonth.toString('MMMM yyyy')  
   const {getMonthSequence} = useSequence() 
-  const test = getMonthSequence(dateMonth.getMonth()+1)
+  const {total,totalFull} = getMonthSequence(dateMonth.getMonth()+1)
+  
   
   function monthBack() {
     addMonth(-1)
@@ -49,7 +50,7 @@ export default function StrikeCalendarHeader({month,addMonth,dayNamesShort}: Str
         <View className='bg-background flex-row p-2 rounded-xl gap-2 items-center flex-1'>
           <Zap fill={twColors.yellow[400]} color={twColors.yellow[400]} size={32}/>
           <View className=''>
-            <Text className='text-4xl font-bold text-primary'>{test.total}</Text>
+            <Text className='text-4xl font-bold text-primary'>{total}</Text>
             <Text className='font-bold text-primary'>TERÇOS</Text>
           </View>
         </View>
@@ -57,15 +58,15 @@ export default function StrikeCalendarHeader({month,addMonth,dayNamesShort}: Str
         <View className='bg-background flex-row p-2 rounded-xl gap-2 items-center flex-1'>
           <Zap fill={twColors.yellow[400]} color={twColors.yellow[400]} size={32}/>
           <View className=''>
-            <Text className='text-4xl font-bold text-primary'>{test.totalFull}</Text>
+            <Text className='text-4xl font-bold text-primary'>{totalFull}</Text>
             <Text className='font-bold text-primary'>ROSÁRIOS</Text>
           </View>
         </View>
         
       </View>
 
-      <View className='flex-row justify-between items-center border-b border-b-border py-2'>
-        {dayNamesShort.map(day => <Text key={day} className='text-primary'>{day}</Text>)}
+      <View className='flex-row justify-between items-center border-b border-b-border py-2 gap-3'>
+        {dayNamesShort.map(day => <Text key={day} className='text-primary text-center flex-1'>{day}</Text>)}
       </View>
     </View>
   )

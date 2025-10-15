@@ -11,7 +11,7 @@ export default function HomeScreen() {
 
   return (
     <ScrollView className="h-full flex bg-background" showsVerticalScrollIndicator={false}>
-      <View  className="flex h-full  items-center justify-center gap-4 p-4 ">
+      <View  className="flex h-full  items-center justify-center gap-4 p-4">
         <View className="bg-card rounded-xl  flex w-full h-48  flex-row p-1">
           <Image
             className='mr-auto h-full w-32' 

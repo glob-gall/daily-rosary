@@ -1,4 +1,4 @@
-import Strike from '@/screens/strike'
+import Strike from '@/screens/strike/index'
 
 
 

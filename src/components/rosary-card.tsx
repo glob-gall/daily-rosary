@@ -39,10 +39,10 @@ const rosaryCard = {
 
 export default function RosaryCard({misteryName,href}:RosaryCardProps) {
   return (
-    <Link href={href} >
+    <Link href={href} className='w-full'>
       <View 
         style={{backgroundColor: rosaryCard[misteryName].color}} 
-        className='w-full flex-row rounded-xl overflow-hidden h-28'
+        className='w-full flex-row rounded-xl overflow-hidden h-28 '
       >
         <View className='p-4 flex-col items-start justify-between'>
           <Text className='text-slate-100 font-bold text-lg'>
