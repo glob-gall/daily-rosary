@@ -1,4 +1,4 @@
-import { SequenceDay } from "@/store/sequence-store";
+import { SequenceDay } from '@/hooks/sequence';
 import twColors from 'tailwindcss/colors';
 import XDate from "xdate";
 import { sequenceToString } from "./stored-sequence-to-string";
@@ -10,15 +10,10 @@ type CalendarDay = {
   textColor: string
 }
 
-type CalendarMarkedDates = {
+export type CalendarMarkedDates = {
   [key:string]: CalendarDay
 }
 
-// '2025-09-04': {startingDay: true, endingDay:true, selected: true, color: twColors.yellow[200], textColor: twColors.yellow[800]  },
-// '2025-09-20': {startingDay:true, endingDay:true, selected: true, color: twColors.yellow[200], textColor: twColors.yellow[800] },
-// '2025-09-22': {startingDay: true, selected: true, color: twColors.yellow[200], textColor: twColors.yellow[800] },
-// '2025-09-23': {selected: true, color: twColors.yellow[200], textColor: twColors.yellow[800] },
-// '2025-09-24': {selected: true, endingDay: true, color: twColors.yellow[200], textColor: twColors.yellow[800]},
 type StoredSequenceToCalendarResponse = {
   calendarDays:CalendarMarkedDates
 }

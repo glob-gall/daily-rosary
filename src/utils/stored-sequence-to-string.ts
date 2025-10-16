@@ -1,4 +1,4 @@
-import { SequenceDay } from "@/store/sequence-store";
+import { SequenceDay } from "@/hooks/sequence";
 
 export function sequenceToString(date: SequenceDay): string {
 

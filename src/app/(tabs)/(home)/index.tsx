@@ -1,3 +1,4 @@
+// import AudioPlayer from "@/components/audio-player";
 import RosaryCard from "@/components/rosary-card";
 import { getDayMistery } from "@/utils/get-day-mistery";
 import { getDayMisteryLink } from "@/utils/get-day-mistery-link";
@@ -37,6 +38,8 @@ export default function HomeScreen() {
           </View>
           
         </View>
+
+        {/* <AudioPlayer/> */}
 
         <RosaryCard misteryName="full" href="/(tabs)/(home)/rosary/full" />
         <RosaryCard misteryName="dolorosos" href="/(tabs)/(home)/rosary/dolorosos" />
