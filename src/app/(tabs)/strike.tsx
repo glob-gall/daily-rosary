@@ -1,7 +1,7 @@
-import Strike from '@/screens/strike/index'
+import StrikeScreen from '@/screens/strike'
 
 
 
-export default function StrikePage() {
-  return <Strike />
+export default function Strike() {
+  return <StrikeScreen />
 }

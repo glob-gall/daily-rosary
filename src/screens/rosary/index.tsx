@@ -12,7 +12,7 @@ type RosaryProps = {
   misteries: Misteries
   type: RosaryType
 }
-export default function Rosary({misteries, type}:RosaryProps) {
+export default function RosaryScreen({misteries, type}:RosaryProps) {
   return (
     <ScrollView className='bg-background'>
       <View className='m-4 p-4 bg-card rounded-xl'>

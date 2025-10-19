@@ -5,7 +5,7 @@ import { View } from 'react-native'
 
 import ConsecutiveDays from './consecutive-days'
 
-export default function Strike() {
+export default function StrikeScreen() {
 
   return (
     <View className='p-4 gap-4 bg-background h-full'>

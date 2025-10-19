@@ -1,6 +1,5 @@
-import FullRosary from '@/screens/rosary/full-rosary'
-import React from 'react'
+import FullRosaryScreen from '@/screens/rosary/full-rosary'
 
 export default function full() {
-  return <FullRosary />
+  return <FullRosaryScreen />
 }

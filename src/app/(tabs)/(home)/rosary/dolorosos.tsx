@@ -1,7 +1,7 @@
 import { dolorosos } from '@/constants/misteries'
-import Rosary from '@/screens/rosary'
+import RosaryScreen from '@/screens/rosary'
 
 
 export default function DolorososScreen() {
-  return <Rosary misteries={dolorosos} type='dolorosos'/>
+  return <RosaryScreen misteries={dolorosos} type='dolorosos'/>
 }

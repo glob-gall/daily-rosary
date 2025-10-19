@@ -1,5 +1,5 @@
-import Profile from '@/screens/profile'
+import ProfileScreen from '@/screens/profile'
 
-export default function ProfilePage() {
-  return <Profile/>
+export default function Profile() {
+  return <ProfileScreen/>
 }

@@ -13,7 +13,7 @@ import { RosaryMisteries } from './components/rosary-misteries'
 import { RosaryPray } from './components/rosary-pray'
 
 
-export default function FullRosary() {
+export default function FullRosaryScreen() {
 
   return (
     <ScrollView className='bg-background'>
