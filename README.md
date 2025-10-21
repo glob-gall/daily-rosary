@@ -1,13 +1,25 @@
-# Welcome to your Expo app 👋
+## Preview
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+<img width="246" height="533" alt="image" src="https://github.com/user-attachments/assets/453cd0c4-e391-4d81-becb-61ba04ff7efd" />
+<img width="246" height="533" alt="image" src="https://github.com/user-attachments/assets/621f6f83-7ad5-4b9e-87db-f7de44e6ce99" />
+<img width="246" height="533" alt="image" src="https://github.com/user-attachments/assets/b23af26f-0d72-499f-a174-21dca04703db" />
 
-## Get started
+## About the project
+This app is a personal project that i made for me and any catholic that want to use it. You can see the features below and build it your won if you like, i made the last .apk  
+
+   - ### Features
+   - Pray rosary with the misteries
+   - Calendar with praying strike
+   - total rosary counting
+   - achivements based on user prays
+
+---
+## Get started With Expo
 
 1. Install dependencies
 
    ```bash
-   npm install
+   yarn install
    ```
 
 2. Start the app
@@ -24,23 +36,6 @@ In the output, you'll find options to open the app in a
 - [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
 You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
 
 ## Join the community
 
