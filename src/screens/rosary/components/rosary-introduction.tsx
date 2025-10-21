@@ -1,38 +1,61 @@
-import { rosaryInitialPart } from '@/constants/rosary'
+import { aveMaria, credo, oferecimentoTerco, paiNosso, sinalDaSantaCruz } from '@/constants/prays'
+import { invocacao1, invocacao2, invocacao3 } from '@/constants/prays/ave-maria'
 import { Fragment } from 'react'
 import { RosaryPray } from './rosary-pray'
+
 
 export function RosaryIntroduction() {
   return (
     <Fragment>
       <RosaryPray 
-        title={rosaryInitialPart[1].title}
-        pray={rosaryInitialPart[1].pray}
+        title='Sinal da cruz'
+        pray={sinalDaSantaCruz}
       />
       
       
       <RosaryPray 
-        title={rosaryInitialPart[2].title}
-        pray={rosaryInitialPart[2].pray}
-      />
-      
-
-      <RosaryPray 
-        title={rosaryInitialPart[3].title}
-        pray={rosaryInitialPart[3].pray}
+        title='Oferecimento do Terço'
+        pray={oferecimentoTerco}
       />
       
 
       <RosaryPray 
-        title={rosaryInitialPart[4].title}
-        pray={rosaryInitialPart[4].pray}
+        title='Oração do Credo'
+        pray={credo}
       />
       
 
       <RosaryPray 
-        title={rosaryInitialPart[5].title}
-        pray={rosaryInitialPart[5].pray}
-        times={rosaryInitialPart[5].times}
+        title='O primeiro Pai Nosso'
+        pray={paiNosso}
+      />
+      
+
+      <RosaryPray 
+        title='Primeira invocação'
+        pray={invocacao1}
+      />
+      <RosaryPray 
+        title='Ave-Maria'
+        pray={aveMaria}
+      />
+      
+      <RosaryPray 
+        title='Segunda invocação'
+        pray={invocacao2}
+      />
+      <RosaryPray 
+        title='Ave-Maria'
+        pray={aveMaria}
+      />
+      
+      <RosaryPray 
+        title='Terceira invocação'
+        pray={invocacao3}
+      />
+      <RosaryPray 
+        title='Ave-Maria'
+        pray={aveMaria}
       />
       
     </Fragment>

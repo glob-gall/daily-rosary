@@ -16,7 +16,7 @@ export default function DailyRosaryCard() {
         source={require('@/assets/images/holy/virgemmaria.png')}
       />
 
-      <View className="m-3">
+      <View className="p-3">
 
         <Text className="ml-auto text-primary">
           {getWeekday()}

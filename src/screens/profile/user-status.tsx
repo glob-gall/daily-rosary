@@ -29,8 +29,6 @@ export function UserStatus() {
            <Text className='font-bold text-lg text-primary'>SEQUÊNCIA ATUAL: {lastSequence} DIAS</Text>
         </View>
 
-   
-
         {/* <Button title='reset' onPress={reset}/> */}
         {/* <Button title='test' onPress={test}/> */}
       

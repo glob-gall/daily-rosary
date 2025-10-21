@@ -65,8 +65,8 @@ export default function StrikeCalendarHeader({month,addMonth,dayNamesShort}: Str
         
       </View>
 
-      <View className='flex-row justify-between items-center border-b border-b-border py-2 gap-3'>
-        {dayNamesShort.map(day => <Text key={day} className='text-primary text-center flex-1'>{day}</Text>)}
+      <View className='flex-row justify-between items-center border-b border-b-border gap-1'>
+        {dayNamesShort.map(day => <Text key={day} className='text-primary text-center flex-1 text-sm'>{day}</Text>)}
       </View>
     </View>
   )
