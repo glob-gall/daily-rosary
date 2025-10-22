@@ -2,7 +2,6 @@ import { RosaryType } from '@/constants/misteries'
 import { useSequence } from '@/hooks/sequence'
 import { splitDate } from '@/utils/split-date'
 import { useRouter } from 'expo-router'
-import React from 'react'
 import { Text, TouchableOpacity, View } from 'react-native'
 
 type CompleteRosaryButtonProps = {

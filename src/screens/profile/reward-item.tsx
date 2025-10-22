@@ -1,7 +1,6 @@
 import { useTheme } from "@/hooks/theme";
 import { cva } from "class-variance-authority";
 import { Award, Lock } from 'lucide-react-native';
-import React from 'react';
 import { Text, View } from 'react-native';
 import twColors from 'tailwindcss/colors';
 
