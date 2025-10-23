@@ -1,6 +1,7 @@
 import { View } from 'react-native';
-import UserRewards from './user-rewards';
-import { UserStatus } from './user-status';
+import DeveloperInfo from './components/developer-info';
+import UserRewards from './components/user-rewards';
+import { UserStatus } from './components/user-status';
 
 export default function ProfileScreen() {
   
@@ -11,7 +12,7 @@ export default function ProfileScreen() {
       <UserStatus/>
       <UserRewards />
       {/* <AppShare/> */}
-      
+      <DeveloperInfo />
     </View>
   )
 }

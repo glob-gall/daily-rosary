@@ -9,14 +9,14 @@ import twColors from 'tailwindcss/colors';
 
 export default function DailyRosaryCard() {
   return (
-    <View className="bg-card rounded-xl  flex w-full h-48  flex-row p-1">
+    <View className="bg-card rounded-xl  flex w-full  flex-row p-1 flex-wrap min-h-48">
       
       <Image
         className='mr-auto h-full w-32' 
         source={require('@/assets/images/holy/virgemmaria.png')}
       />
 
-      <View className="p-3">
+      <View className="p-3 ml-auto">
 
         <Text className="ml-auto text-primary">
           {getWeekday()}
