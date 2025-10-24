@@ -9,10 +9,10 @@ import twColors from 'tailwindcss/colors';
 
 export default function DailyRosaryCard() {
   return (
-    <View className="bg-card rounded-xl  flex w-full  flex-row p-1 flex-wrap min-h-48">
+    <View className="bg-card rounded-xl  flex w-full  flex-row p-1 min-h-48">
       
       <Image
-        className='mr-auto h-full w-32' 
+        className='mr-auto h-full w-32 absolute top-0 left-0 z-50' 
         source={require('@/assets/images/holy/virgemmaria.png')}
       />
 
